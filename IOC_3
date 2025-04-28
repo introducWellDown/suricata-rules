@@ -1,0 +1,13 @@
+type,value,description
+ip-src,128.254.207.55,Suspicious IP communicating with internal hosts
+ip-dst,10.0.0.149,Suspicious internal host communicating with suspicious IP
+port-src,80,Suspicious source port (HTTP traffic from malicious IP)
+port-dst,49750,Suspicious destination port (high random port used internally)
+user-agent,curl,Detected suspicious User-Agent
+domain,example.top,Suspicious domain used for XLoader C2
+domain,example.xyz,Suspicious domain used for XLoader data exfiltration
+uri-path,/login.php,Suspicious URI path accessed by malware
+md5,5d41402abc4b2a76b9719d911017c592,Malicious file hash (sample malware)
+sha256,3b5d5c3712955042212316173ccf37be800f888b68c3b82b59e10140543e7c0c,Malicious file hash (XLoader variant)
+email,phish@example.com,Suspicious email address used in phishing
+filename,invoice_2025.exe,Malicious executable file
