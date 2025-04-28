@@ -1,1 +1,4 @@
-
+alert ip any any -> any any (msg:"[04_04]Suspicious IP detected"; flow:to_client,established; classtype:trojan-activity; sid: 20240001; rev:1;)
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:" [04_04] User-Agent detected"; flow:to_server,established; content:"User-Agent|3a| curl"; http_header; pcre:"/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/"; classtype:detected-attack; sid: 550987; rev:2;)
+alert http any any -> any any (msg:"04_04 HTTP GET Request detected "; flow:to_server,established; http.method; content:"GET"; http.uri; pcre:"/\.(xyz|png|jpg)$/i"; http.uri; pcre:"/^.{100,}/"; sid: 20240001; rev:1;)
+alert smb $HOME_NET any -> $EXTERNAL_NET any (msg:"04_04 SMB Traffic detected"; flow:to_server,established; sid: 550987; rev:2;)
