@@ -1,1 +1,6 @@
-
+type,value,description
+ip-src,128.254.207.55,Suspicious IP communicating with internal hosts
+ip-dst,10.0.0.149,Suspicious internal host communicating with suspicious IP
+port-src,80,Suspicious source port (HTTP traffic from malicious IP)
+port-dst,49750,Suspicious destination port (high random port used internally)
+user-agent,curl,Detected suspicious User-Agent
