@@ -1,0 +1,3 @@
+alert dns any any -> any any (msg:"[04_04] Possible XLoader infection - DNS query to .top domain"; dns.query; pcre:"/\.top$/i"; sid:1041001; rev:2;)
+alert http any any -> any any (msg:"[04_04] Possible XLoader infection - HTTP request to .top domain"; flow:to_server,established; http.host; pcre:"/\.top$/i"; sid:1041002; rev:2;)
+alert http any any -> any any (msg:"[04_04] Possible XLoader infection - HTTP POST to .xyz domain with 'pass' in body"; flow:to_server,established; http.method; content:"POST"; http.host; pcre:"/\.xyz$/i"; http.request_body; content:"pass"; nocase; sid:1041003; rev:2;)
