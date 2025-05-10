@@ -1,0 +1,6 @@
+#task2_1
+alert http any any -> any any (msg:"04_04 IcedID detected"; flow:established,to_server; http.cookie; content:"__gads="; http.cookie; content:"__gat="; http.cookie; content:"__io="; http.cookie; content:"__gid="; classtype:trojan-activity; sid: 550987; rev:1;)Z
+#task2_2
+alert smtp any any -> any any ( msg:"04_04 OriginLogger detected"; flow:to_server,established; content:"<br>Username"; content:"<br>Password"; pcre:"/(Username|Password|User|Pass|Login)=[^\s]+/i"; metadata:service http; classtype:trojan-activity; sid: 4515539; rev:1; )
+#task2_3
+alert http any any -> any any (msg:"[04_04] NUMOZYLOD detected"; flow:established,to_server; http.method; content:"GET"; http.uri; pcre:"/\\|3f\\|status\\|3d\\|(install|start)/"; sid: 2347812; rev:1;)

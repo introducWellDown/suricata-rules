@@ -1,0 +1,15 @@
+type,value,description
+ip-dst,62.173.140.103,Ursnif C2 Server (URI Struct M1/M2)
+ip-dst,62.173.138.138,Ursnif C2 Server (URI Struct M1/M2)
+ip-dst,64.185.227.156,ipify.org IP Lookup Service
+ip-dst,195.161.114.3,NUMOZYLOD CnC Server
+ip-dst,194.26.135.119,RedLine Stealer C2 Server
+ip-dst,204.11.58.28,AgentTesla SMTP Exfil Server
+domain,ipify.org,External IP Lookup Service
+uri-path,_2B,Ursnif C2 URI Pattern
+uri-path,_2F,Ursnif C2 URI Pattern
+port-dst,12432,RedLine Stealer C2 Port
+port-dst,587,AgentTesla SMTP Exfil Port
+user-agent,Windows Powershell,Suspicious PS User-Agent
+hash-sha256,71d8df9815f8a2265aa518faec2f74d0345729b093f1d71eb6dece997ec93243,XLoader Payload (Payment Slip.rar)
+hash-sha256,5f6c801582b16d51d8a5c79a64aa18291cd494a52ce92a158ff90c6f6f41fee8,XLoader Payload (Payment Slip.exe)
